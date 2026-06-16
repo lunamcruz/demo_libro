@@ -20,13 +20,13 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Cinzel Decorative', serif !important;
         }
 
         body {
             background-color: var(--bg-black);
             color: var(--text-white);
             overflow-x: hidden;
+            font-family: 'Cinzel Decorative', serif;
         }
 
         /* --- Sección de Portada (Hero) --- */
@@ -49,6 +49,7 @@
         }
 
         .main-title {
+            font-family: 'Cinzel Decorative', serif;
             font-size: 5rem;
             font-weight: 700;
             letter-spacing: 2px;
@@ -56,6 +57,7 @@
         }
 
         .subtitle {
+            font-family: 'Cinzel Decorative', serif;
             font-size: 1.4rem;
             font-weight: 400;
             letter-spacing: 1px;
@@ -71,9 +73,10 @@
             pointer-events: none;
         }
 
-        /* Tamaño idéntico a .artist-subtext (1.5rem / 1.2rem móvil) */
+        /* Tamaño base idéntico para ambas frases */
         .quote-left {
-            font-size: 1.5rem !important; 
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.5rem; 
             font-weight: 400;
             line-height: 1.4;
             max-width: 450px;
@@ -89,6 +92,7 @@
         }
 
         .artist-name {
+            font-family: 'Cinzel Decorative', serif;
             font-size: 2.5rem; 
             font-weight: 700;
             color: var(--pink-magenta);
@@ -99,6 +103,7 @@
         }
 
         .artist-subtext {
+            font-family: 'Cinzel Decorative', serif;
             font-size: 1.5rem; 
             font-weight: 400;
             line-height: 1.2;
@@ -152,6 +157,7 @@
         }
 
         .credits-author {
+            font-family: 'Cinzel Decorative', serif;
             font-size: 1.5rem;
             font-weight: 400;
             letter-spacing: 1px;
@@ -261,6 +267,7 @@
         .right-arrow { right: -15px; }
 
         .download-btn {
+            font-family: 'Cinzel Decorative', serif;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--text-white);
@@ -286,16 +293,19 @@
             transform: translateY(-3px);
         }
 
-        /* --- Responsividad --- */
+        /* --- Responsividad (Cambios aplicados aquí simultáneamente) --- */
         @media (min-width: 768px) {
             .hero-section { padding: 3rem 12% 2rem 12%; }
             .main-title { font-size: 7.5rem; }
             .subtitle { font-size: 2rem; }
             .content-grid { grid-template-columns: 1fr 1fr; align-items: start; margin-top: 3rem; }
-            .quote-left { font-size: 1.8rem !important; max-width: 500px; } 
+            
+            /* Ajuste idéntico en pantallas grandes */
+            .quote-left { font-size: 1.8rem; max-width: 500px; } 
+            .artist-subtext { font-size: 1.8rem; }
+
             .artist-right { margin-top: 8rem; justify-self: center; text-align: center; } 
             .artist-name { font-size: 3rem; }
-            .artist-subtext { font-size: 1.8rem; }
             footer { flex-direction: row; align-items: flex-end; }
             .audio-player-container { margin-top: 0; position: relative; bottom: -5px; }
             .carousel-item { width: 320px; height: 440px; }
@@ -311,9 +321,12 @@
             .hero-section { padding: 2.5rem 8% 1.5rem 8%; }
             .main-title { font-size: 3.2rem; }
             .subtitle { font-size: 1rem; }
-            .quote-left { font-size: 1.2rem !important; } 
-            .artist-name { font-size: 2rem; }
+            
+            /* Ajuste idéntico en móviles */
+            .quote-left { font-size: 1.2rem; } 
             .artist-subtext { font-size: 1.2rem; }
+
+            .artist-name { font-size: 2rem; }
             .audio-player-container { max-width: 100%; }
             .download-btn { font-size: 1.1rem; padding: 10px 25px; }
             .nav-arrow { width: 35px; height: 35px; font-size: 1rem; }
