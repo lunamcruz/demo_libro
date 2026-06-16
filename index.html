@@ -38,7 +38,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 2.5rem 12% 1.5rem 12%;
+            padding: 2.5rem 8% 1.5rem 8%;
             cursor: pointer;
         }
 
@@ -73,13 +73,13 @@
             pointer-events: none;
         }
 
-        /* TAMAÑO MÓVIL AUMENTADO */
+        /* TAMAÑO IMPACTANTE EN MÓVIL */
         .quote-left {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 1.6rem; 
+            font-size: 2.2rem; 
             font-weight: 400;
-            line-height: 1.4;
-            max-width: 450px;
+            line-height: 1.3;
+            max-width: 600px;
             letter-spacing: 1px;
             margin-top: 1.5rem;
         }
@@ -87,24 +87,24 @@
         .artist-right {
             justify-self: center;
             text-align: center;   
-            max-width: 400px;
+            max-width: 500px;
             margin-top: 3rem;
         }
 
         .artist-name {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 2.5rem; 
+            font-size: 3rem; 
             font-weight: 700;
             color: var(--pink-magenta);
             text-transform: uppercase;
-            line-height: 1;
+            line-height: 1.1;
             letter-spacing: 1px;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
         }
 
         .artist-subtext {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 1.6rem; 
+            font-size: 2.2rem; 
             font-weight: 400;
             line-height: 1.2;
             letter-spacing: 1px;
@@ -295,17 +295,17 @@
 
         /* --- RESPONSIVIDAD PARA COMPUTADORAS --- */
         @media (min-width: 768px) {
-            .hero-section { padding: 3rem 12% 2rem 12%; }
+            .hero-section { padding: 3rem 10% 2rem 10%; }
             .main-title { font-size: 7.5rem; }
             .subtitle { font-size: 2rem; }
-            .content-grid { grid-template-columns: 1fr 1fr; align-items: start; margin-top: 3rem; }
+            .content-grid { grid-template-columns: 1fr 1fr; align-items: center; margin-top: 4rem; }
             
-            /* NUEVO TAMAÑO GRANDE E IDÉNTICO EN ESCRITORIO */
-            .quote-left { font-size: 2.5rem; max-width: 550px; } 
-            .artist-subtext { font-size: 2.5rem; }
+            /* TAMAÑO MAXIMIZADO EN ESCRITORIO (4rem) */
+            .quote-left { font-size: 4rem; max-width: 700px; } 
+            .artist-subtext { font-size: 4rem; }
 
-            .artist-right { margin-top: 8rem; justify-self: center; text-align: center; } 
-            .artist-name { font-size: 3rem; }
+            .artist-right { margin-top: 0; justify-self: center; text-align: center; } 
+            .artist-name { font-size: 4.5rem; }
             footer { flex-direction: row; align-items: flex-end; }
             .audio-player-container { margin-top: 0; position: relative; bottom: -5px; }
             .carousel-item { width: 320px; height: 440px; }
@@ -319,15 +319,14 @@
 
         /* --- RESPONSIVIDAD PARA MÓVILES --- */
         @media (max-width: 480px) {
-            .hero-section { padding: 2.5rem 8% 1.5rem 8%; }
+            .hero-section { padding: 2.5rem 6% 1.5rem 6%; }
             .main-title { font-size: 3.2rem; }
             .subtitle { font-size: 1rem; }
             
-            /* NUEVO TAMAÑO MEDIANO EN CELULARES */
-            .quote-left { font-size: 1.5rem; } 
-            .artist-subtext { font-size: 1.5rem; }
+            .quote-left { font-size: 2.2rem; } 
+            .artist-subtext { font-size: 2.2rem; }
 
-            .artist-name { font-size: 2rem; }
+            .artist-name { font-size: 2.8rem; }
             .audio-player-container { max-width: 100%; }
             .download-btn { font-size: 1.1rem; padding: 10px 25px; }
             .nav-arrow { width: 35px; height: 35px; font-size: 1rem; }
