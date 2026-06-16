@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tourbook - Recap de Puro Concierto</title>
-    <!-- Importación de las tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -26,7 +25,8 @@
         body {
             background-color: var(--bg-black);
             color: var(--text-white);
-            font-family: sans-serif;
+            font-family: 'Cinzel Decorative', serif; /* Aplicado globalmente */
+            font-weight: 700;
             overflow-x: hidden;
         }
 
@@ -39,7 +39,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 2.5rem 12% 1.5rem 12%; /* Textos empujados hacia el centro para evitar cortes */
+            padding: 2.5rem 15% 1.5rem 15%; /* Alineación hacia el centro */
             cursor: pointer;
         }
 
@@ -50,17 +50,13 @@
         }
 
         .main-title {
-            font-family: 'Cinzel Decorative', serif;
             font-size: 5rem;
-            font-weight: 700;
             letter-spacing: 2px;
             line-height: 0.95;
         }
 
         .subtitle {
-            font-family: 'Cinzel Decorative', serif;
             font-size: 1.4rem;
-            font-weight: 700;
             letter-spacing: 1px;
             margin-top: 0.2rem;
         }
@@ -75,37 +71,34 @@
         }
 
         .quote-left {
-            font-family: 'Alex Brush', cursive;
-            font-size: 3.2rem;
-            line-height: 1.1;
-            max-width: 420px;
+            font-size: 2.5rem; /* Adaptado el tamaño para la nueva tipografía */
+            line-height: 1.2;
+            max-width: 450px;
             letter-spacing: 1px;
             margin-top: 1.5rem;
         }
 
         .artist-right {
-            justify-self: end;
-            text-align: right;
+            justify-self: center; /* Empujado hacia el centro */
+            text-align: center;   /* Alineación centralizada */
             max-width: 400px;
             margin-top: 3rem;
         }
 
         .artist-name {
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
+            font-size: 2.8rem; /* Reducido un poco de tamaño */
             color: var(--pink-magenta);
             text-transform: uppercase;
-            line-height: 0.9;
+            line-height: 0.95;
             letter-spacing: 1px;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.5rem;
         }
 
         .artist-subtext {
-            font-family: 'Alex Brush', cursive;
-            font-size: 3.5rem;
-            line-height: 1;
+            font-size: 1.8rem; /* Reducido un poco de tamaño */
+            line-height: 1.1;
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .audio-player-container {
@@ -155,8 +148,7 @@
         }
 
         .credits-author {
-            font-family: 'Alex Brush', cursive;
-            font-size: 3rem;
+            font-size: 1.6rem;
             letter-spacing: 1px;
         }
 
@@ -180,7 +172,7 @@
         .barcode span:nth-child(4n) { width: 2px; }
         .barcode span:last-child { margin-right: 0; }
 
-        /* --- Nueva Sección: Contenido Inferior (Carrusel y Botón) --- */
+        /* --- Sección: Contenido Inferior (Carrusel y Botón) --- */
         .content-section {
             padding: 4rem 2rem;
             display: flex;
@@ -190,7 +182,6 @@
             background: linear-gradient(to bottom, #000000, #0a0a0c);
         }
 
-        /* Envoltorio relativo para contener las flechas de navegación */
         .carousel-wrapper {
             position: relative;
             width: 100%;
@@ -214,7 +205,6 @@
             transition: transform 0.5s ease-in-out;
         }
 
-        /* Detiene la animación CSS automática al presionar las flechas */
         .carousel-track.manual-active {
             animation: none !important;
         }
@@ -238,7 +228,7 @@
             100% { transform: translateX(calc(-280px * 4 - 20px * 4)); }
         }
 
-        /* Estilos de las flechas manuales */
+        /* Flechas manuales */
         .nav-arrow {
             position: absolute;
             top: 50%;
@@ -266,11 +256,9 @@
         .left-arrow { left: -15px; }
         .right-arrow { right: -15px; }
 
-        /* Botón de Descarga Estilizado */
+        /* Botón de Descarga */
         .download-btn {
-            font-family: 'Cinzel Decorative', serif;
             font-size: 1.5rem;
-            font-weight: 700;
             color: var(--text-white);
             background: transparent;
             border: 2px solid var(--text-white);
@@ -294,20 +282,16 @@
             transform: translateY(-3px);
         }
 
-        .download-btn:active {
-            transform: translateY(-1px);
-        }
-
         /* --- Responsividad --- */
         @media (min-width: 768px) {
-            .hero-section { padding: 3rem 15% 2rem 15%; } /* Mayor separación en ordenadores */
+            .hero-section { padding: 3rem 12% 2rem 12%; }
             .main-title { font-size: 7.5rem; }
             .subtitle { font-size: 2rem; }
             .content-grid { grid-template-columns: 1fr 1fr; align-items: start; margin-top: 3rem; }
-            .quote-left { font-size: 4.5rem; max-width: 500px; }
-            .artist-right { margin-top: 8rem; }
-            .artist-name { font-size: 4.5rem; }
-            .artist-subtext { font-size: 4.5rem; }
+            .quote-left { font-size: 3.5rem; max-width: 500px; }
+            .artist-right { margin-top: 8rem; justify-self: center; text-align: center; } /* Modificado para arrimar al centro */
+            .artist-name { font-size: 3.2rem; }
+            .artist-subtext { font-size: 2.2rem; }
             footer { flex-direction: row; align-items: flex-end; }
             .audio-player-container { margin-top: 0; position: relative; bottom: -5px; }
             .carousel-item { width: 320px; height: 440px; }
@@ -320,12 +304,12 @@
         }
 
         @media (max-width: 480px) {
-            .hero-section { padding: 2.5rem 5% 1.5rem 5%; }
+            .hero-section { padding: 2.5rem 8% 1.5rem 8%; }
             .main-title { font-size: 3.8rem; }
             .subtitle { font-size: 1.1rem; }
-            .quote-left { font-size: 2.8rem; }
-            .artist-name { font-size: 2.8rem; }
-            .artist-subtext { font-size: 2.8rem; }
+            .quote-left { font-size: 2rem; }
+            .artist-name { font-size: 2.2rem; }
+            .artist-subtext { font-size: 1.4rem; }
             .audio-player-container { max-width: 100%; }
             .download-btn { font-size: 1.1rem; padding: 10px 25px; }
             .nav-arrow { width: 35px; height: 35px; font-size: 1rem; }
@@ -336,7 +320,6 @@
 </head>
 <body>
 
-    <!-- Sección Superior (Portada / Revista) -->
     <main class="hero-section" id="bg-container">
         <header>
             <h1 class="main-title">Tourbook</h1>
@@ -376,22 +359,18 @@
         </footer>
     </main>
 
-    <!-- Nueva Sección Inferior (Carrusel automático y Acción) -->
     <section class="content-section">
         
         <div class="carousel-wrapper">
-            <!-- Flechas direccionales -->
             <button class="nav-arrow left-arrow" id="btn-prev">&#10094;</button>
 
             <div class="carousel-container">
                 <div class="carousel-track" id="track-carousel">
-                    <!-- Bloque original de imágenes -->
                     <img src="along.jpeg" alt="Along" class="carousel-item">
                     <img src="harry.jpg" alt="Harry" class="carousel-item">
                     <img src="louis 2.jpg" alt="Louis 2" class="carousel-item">
                     <img src="olivia.jpg" alt="Olivia" class="carousel-item">
                     
-                    <!-- Duplicado idéntico para crear el efecto óptico de ciclo infinito -->
                     <img src="along.jpeg" alt="Along" class="carousel-item">
                     <img src="harry.jpg" alt="Harry" class="carousel-item">
                     <img src="louis 2.jpg" alt="Louis 2" class="carousel-item">
@@ -402,14 +381,12 @@
             <button class="nav-arrow right-arrow" id="btn-next">&#10095;</button>
         </div>
 
-        <!-- Botón de descarga interactivo -->
         <a href="#" class="download-btn">
             descarga el libro ya
         </a>
 
     </section>
 
-    <!-- Scripts de Interacción de Audio y Carrusel -->
     <script>
         const background = document.getElementById('bg-container');
         const audio = document.getElementById('audio-track');
@@ -441,7 +418,7 @@
         function moveManual(direction) {
             track.classList.add('manual-active');
             const item = document.querySelector('.carousel-item');
-            const itemWidth = item.offsetWidth + 20; // Ancho de imagen + gap
+            const itemWidth = item.offsetWidth + 20;
 
             if (direction === 'next') {
                 positionIndex++;
