@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel+Decorative:wght@700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         /* --- Variables de Paleta de Colores --- */
@@ -39,7 +38,6 @@
             position: relative;
             width: 100%;
             min-height: 100vh;
-            /* Reemplaza 'lou.jpg' con la ruta real de tu imagen de fondo */
             background: linear-gradient(to bottom, rgba(13, 13, 15, 0.3), var(--overlay-black)), url('lou.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
@@ -134,20 +132,21 @@
             letter-spacing: 2px;
         }
 
-        /* Controles: Botón y Redes */
-        .cta-social-container {
+        /* Contenedor Interactivo: Botón y Audio */
+        .cta-audio-container {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            justify-content: center;
+            gap: 1rem;
+            width: 100%;
+            max-width: 400px;
         }
 
         .btn-buy {
             font-family: 'Bebas Neue', sans-serif;
             background-color: var(--text-white);
             color: var(--bg-dark);
-            padding: 0.6rem 2rem;
+            padding: 0.6rem 3rem;
             font-size: 1.3rem;
             border: none;
             border-radius: 50px;
@@ -155,35 +154,21 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: transform 0.2s, background-color 0.2s;
+            width: 100%;
+            text-align: center;
         }
 
         .btn-buy:hover {
-            transform: scale(1.05);
+            transform: scale(1.02);
             background-color: #e0e0e0;
         }
 
-        .social-icons {
-            display: flex;
-            gap: 0.8rem;
-        }
-
-        .social-icons a {
-            color: var(--text-white);
-            background-color: var(--pink-primary);
-            width: 35px;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: background-color 0.2s, transform 0.2s;
-            font-size: 1rem;
-        }
-
-        .social-icons a:hover {
-            background-color: var(--pink-light);
-            transform: translateY(-3px);
+        /* Estilo personalizado básico para el reproductor nativo */
+        audio {
+            width: 100%;
+            height: 32px;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         /* Código de barras simulado */
@@ -202,7 +187,6 @@
             height: 100%;
             margin-right: 2px;
         }
-        /* Variaciones de grosor para el código de barras */
         .barcode span:nth-child(odd) { width: 1px; }
         .barcode span:nth-child(even) { width: 3px; }
         .barcode span:nth-child(3n) { width: 4px; }
@@ -229,12 +213,14 @@
                 align-items: flex-end;
             }
 
-            .cta-social-container {
+            .cta-audio-container {
                 order: 2;
+                max-width: 300px;
             }
 
             .credits-author {
                 order: 1;
+                margin-bottom: 5px;
             }
 
             .barcode {
@@ -287,14 +273,12 @@
                 By Luna M Cruz
             </div>
 
-            <div class="cta-social-container">
+            <div class="cta-audio-container">
                 <button class="btn-buy">Buy Now</button>
-                <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                </div>
+                <audio controls>
+                    <source src="Louis Tomlinson Silver tongues.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
             </div>
 
             <div class="barcode" aria-hidden="true">
