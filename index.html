@@ -110,7 +110,7 @@
             letter-spacing: 1px;
         }
 
-        /* --- Reproductor de Música --- */
+        /* --- Reproductor de Música (Control Manual) --- */
         .audio-player-container {
             display: flex;
             align-items: center;
@@ -124,7 +124,7 @@
             margin-top: 2rem;
         }
 
-        /* Miniatura del disco giratorio */
+        /* Miniatura del disco de vinilo */
         .vinyl-thumb {
             width: 50px;
             height: 50px;
@@ -141,7 +141,6 @@
             width: 100%;
         }
 
-        /* Animación de rotación continua */
         @keyframes spin {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
@@ -201,6 +200,7 @@
             }
 
             .quote-left {
+                font-family: 'Alex Brush', cursive;
                 font-size: 4.5rem;
                 max-width: 500px;
             }
@@ -252,7 +252,7 @@
         </div>
 
         <footer>
-            <!-- Contenedor del Reproductor con Miniatura y Controles -->
+            <!-- Reproductor configurado exclusivamente con inicio manual -->
             <div class="audio-player-container">
                 <div class="vinyl-thumb" title="Louis Tomlinson - Faith In The Future Picture Disc"></div>
                 <audio controls src="silvertongues.mp3">
