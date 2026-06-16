@@ -4,22 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tourbook - Recap de Puro Concierto</title>
-    <!-- Google Fonts -->
+    <!-- Fuentes tipográficas idénticas a la captura -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Syne:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- Variables de Paleta de Colores --- */
         :root {
-            --bg-dark: #0D0D0F;
             --text-white: #FFFFFF;
-            --pink-primary: #890050;
-            --pink-light: #E00C78;
-            --overlay-black: rgba(0, 0, 0, 0.4);
+            --pink-magenta: #C2006B; /* Tono magenta exacto de Louis Tomlinson */
+            --overlay-dark: rgba(0, 0, 0, 0.3);
         }
 
-        /* --- Estilos Generales --- */
         * {
             margin: 0;
             padding: 0;
@@ -27,128 +23,123 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-white);
+            background-color: #000;
             min-height: 100vh;
             overflow-x: hidden;
         }
 
-        /* --- Contenedor Principal con Ruta Relativa --- */
+        /* Contenedor con la imagen relativa louis1.jpg */
         .landing-container {
             position: relative;
             width: 100%;
             min-height: 100vh;
-            /* Se aplica la ruta relativa a louis1.jpg con un degradado sutil encima */
-            background: linear-gradient(to bottom, rgba(13, 13, 15, 0.2), var(--overlay-black)), url('louis1.jpg') no-repeat center center/cover;
+            background: linear-gradient(to bottom, var(--overlay-dark), rgba(0,0,0,0.5)), url('louis1.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 2rem;
+            padding: 2.5rem 2rem 1.5rem 2rem;
         }
 
-        /* --- Header (Títulos Superiores) --- */
+        /* --- Encabezado: TOURBOOK --- */
         header {
             text-align: center;
             width: 100%;
-            z-index: 10;
         }
 
         .main-title {
-            font-family: 'Syne', sans-serif;
-            font-size: 4.2rem;
-            font-weight: 800;
-            letter-spacing: -2px;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--text-white);
             text-transform: uppercase;
-            line-height: 0.9;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
-            word-spacing: -5px;
+            letter-spacing: 2px;
+            line-height: 0.95;
         }
 
         .subtitle {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 800;
-            letter-spacing: 4px;
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-white);
             text-transform: uppercase;
-            opacity: 0.95;
-            text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+            letter-spacing: 1px;
+            margin-top: 0.2rem;
         }
 
-        /* --- Contenido Central (Distribución de Textos) --- */
+        /* --- Contenido Central (Distribución exacta de bloques) --- */
         .content-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem;
-            margin: auto 0;
             width: 100%;
-            z-index: 10;
+            margin-top: 1rem;
+            margin-bottom: auto;
         }
 
-        /* Bloque Izquierdo */
+        /* Bloque Izquierdo Superior */
         .quote-left {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.4rem;
+            font-family: 'Amatic SC', sans-serif;
+            font-size: 2.6rem;
             line-height: 1.05;
-            letter-spacing: 1.5px;
-            max-width: 420px;
-            text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+            color: var(--text-white);
+            max-width: 380px;
+            letter-spacing: 1px;
+            margin-top: 1.5rem;
         }
 
-        /* Bloque Derecho */
+        /* Bloque Derecho Intermedio (Alineado a la derecha en pantallas grandes) */
         .artist-right {
             justify-self: end;
             text-align: right;
-            max-width: 450px;
+            max-width: 400px;
+            margin-top: 3rem;
         }
 
         .artist-name {
-            font-family: 'Syne', sans-serif;
-            font-size: 3.2rem;
-            font-weight: 800;
-            color: var(--pink-light);
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--pink-magenta);
             text-transform: uppercase;
-            letter-spacing: -1px;
-            text-shadow: 0 0 15px var(--pink-primary), 2px 2px 5px rgba(0,0,0,0.9);
-            line-height: 0.95;
-            margin-bottom: 0.5rem;
+            line-height: 0.9;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
         }
 
         .artist-subtext {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2.1rem;
+            font-family: 'Amatic SC', sans-serif;
+            font-size: 2.8rem;
+            color: var(--text-white);
+            text-transform: uppercase;
+            line-height: 0.95;
             letter-spacing: 1px;
-            line-height: 1.1;
-            text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
         }
 
-        /* --- Footer (Info Inferior) --- */
+        /* --- Footer: Créditos y Código de Barras --- */
         footer {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1.5rem;
+            justify-content: space-between;
             width: 100%;
-            z-index: 10;
             margin-top: 2rem;
+            gap: 1rem;
         }
 
         .credits-author {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.6rem;
-            letter-spacing: 2px;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+            font-family: 'Amatic SC', sans-serif;
+            font-size: 2.4rem;
+            color: var(--text-white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Código de barras simulado */
+        /* Código de barras CSS idéntico a la posición de la revista */
         .barcode {
             display: flex;
             background-color: var(--text-white);
-            padding: 5px 12px;
-            height: 42px;
+            padding: 4px 10px;
+            height: 48px;
             align-items: center;
-            border-radius: 1px;
         }
         
         .barcode span {
@@ -161,55 +152,57 @@
         .barcode span:nth-child(even) { width: 3px; }
         .barcode span:nth-child(3n) { width: 4px; }
         .barcode span:nth-child(4n) { width: 2px; }
+        .barcode span:last-child { margin-right: 0; }
 
-        /* --- RESPONSIVIDAD --- */
+        /* --- Ajustes de Pantalla (Responsividad) --- */
         @media (min-width: 768px) {
             .landing-container {
-                padding: 3rem;
+                padding: 3rem 4rem 2rem 4rem;
             }
 
             .main-title {
-                font-size: 6.5rem;
+                font-size: 7.5rem;
+            }
+
+            .subtitle {
+                font-size: 2rem;
             }
 
             .content-grid {
                 grid-template-columns: 1fr 1fr;
-                align-items: center;
+                align-items: start;
+                margin-top: 3rem;
+            }
+
+            .quote-left {
+                font-size: 3.5rem;
+                max-width: 450px;
+            }
+
+            .artist-right {
+                margin-top: 8rem; /* Baja el bloque derecho para encajar con el espacio de la foto */
+            }
+
+            .artist-name {
+                font-size: 4.5rem;
+            }
+
+            .artist-subtext {
+                font-size: 3.5rem;
             }
 
             footer {
                 flex-direction: row;
-                justify-content: space-between;
                 align-items: flex-end;
-            }
-
-            .credits-author {
-                order: 1;
-                margin-bottom: 2px;
-            }
-
-            .barcode {
-                order: 2;
             }
         }
 
         @media (max-width: 480px) {
-            .main-title {
-                font-size: 3.2rem;
-            }
-            .subtitle {
-                font-size: 0.85rem;
-                letter-spacing: 3px;
-            }
-            .quote-left {
-                font-size: 1.9rem;
-            }
-            .artist-name {
-                font-size: 2.5rem;
-            }
-            .artist-subtext {
-                font-size: 1.6rem;
-            }
+            .main-title { font-size: 3.8rem; }
+            .subtitle { font-size: 1.1rem; }
+            .quote-left { font-size: 2.2rem; }
+            .artist-name { font-size: 2.8rem; }
+            .artist-subtext { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -217,13 +210,11 @@
 
     <main class="landing-container">
         
-        <!-- Parte Superior: Cabecera Estilo Portada -->
         <header>
             <h1 class="main-title">Tourbook</h1>
             <p class="subtitle">Recap de Puro Concierto</p>
         </header>
 
-        <!-- Parte Central: Textos Flotantes -->
         <div class="content-grid">
             <div class="quote-left">
                 Podría escribir mi autobiografía, pero los conciertos son mejores
@@ -235,7 +226,6 @@
             </div>
         </div>
 
-        <!-- Parte Inferior: Autoría y Código de Barras -->
         <footer>
             <div class="credits-author">
                 By Luna M Cruz
