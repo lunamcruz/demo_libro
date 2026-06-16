@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tourbook - Recap de Puro Concierto</title>
+    <!-- Importación de las tipografías -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
@@ -12,7 +13,7 @@
         :root {
             --text-white: #FFFFFF;
             --pink-magenta: #C2006B;
-            --overlay-dark: rgba(0, 0, 0, 0.4);
+            --overlay-dark: rgba(0, 0, 0, 0.3);
             --bg-black: #000000;
         }
 
@@ -29,16 +30,16 @@
             overflow-x: hidden;
         }
 
-        /* --- Portada con márgenes internos seguros para centrar textos --- */
+        /* --- Sección de Portada (Hero) --- */
         .hero-section {
             position: relative;
             width: 100%;
             min-height: 100vh;
-            background: linear-gradient(to bottom, var(--overlay-dark), rgba(0,0,0,0.75)), url('louis1.jpg') no-repeat center center/cover;
+            background: linear-gradient(to bottom, var(--overlay-dark), rgba(0,0,0,0.6)), url('louis1.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 3rem 10%; 
+            padding: 2.5rem 2rem 1.5rem 2rem;
             cursor: pointer;
         }
 
@@ -50,7 +51,7 @@
 
         .main-title {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 4.5rem;
+            font-size: 5rem;
             font-weight: 700;
             letter-spacing: 2px;
             line-height: 0.95;
@@ -58,7 +59,7 @@
 
         .subtitle {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 700;
             letter-spacing: 1px;
             margin-top: 0.2rem;
@@ -68,42 +69,41 @@
             display: grid;
             grid-template-columns: 1fr;
             width: 100%;
-            margin-top: 2rem;
+            margin-top: 1rem;
             margin-bottom: auto;
             pointer-events: none;
-            gap: 2rem;
         }
 
         .quote-left {
             font-family: 'Alex Brush', cursive;
-            font-size: 3rem;
-            line-height: 1.2;
+            font-size: 3.2rem;
+            line-height: 1.1;
             max-width: 420px;
             letter-spacing: 1px;
-            justify-self: center;
-            text-align: center;
+            margin-top: 1.5rem;
         }
 
         .artist-right {
-            justify-self: center;
-            text-align: center;
+            justify-self: end;
+            text-align: right;
             max-width: 400px;
+            margin-top: 3rem;
         }
 
         .artist-name {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             font-weight: 700;
             color: var(--pink-magenta);
             text-transform: uppercase;
-            line-height: 0.95;
+            line-height: 0.9;
             letter-spacing: 1px;
             margin-bottom: 0.3rem;
         }
 
         .artist-subtext {
             font-family: 'Alex Brush', cursive;
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             line-height: 1;
             letter-spacing: 1px;
         }
@@ -112,7 +112,7 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.7);
             padding: 10px 15px;
             border-radius: 30px;
             backdrop-filter: blur(5px);
@@ -150,13 +150,13 @@
             justify-content: space-between;
             width: 100%;
             margin-top: 2rem;
-            gap: 1.5rem;
+            gap: 1rem;
             pointer-events: none;
         }
 
         .credits-author {
             font-family: 'Alex Brush', cursive;
-            font-size: 2.8rem;
+            font-size: 3rem;
             letter-spacing: 1px;
         }
 
@@ -180,9 +180,9 @@
         .barcode span:nth-child(4n) { width: 2px; }
         .barcode span:last-child { margin-right: 0; }
 
-        /* --- Sección Carrusel --- */
+        /* --- Nueva Sección: Contenido Inferior (Carrusel y Botón) --- */
         .content-section {
-            padding: 4rem 1rem;
+            padding: 4rem 2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -190,17 +190,12 @@
             background: linear-gradient(to bottom, #000000, #0a0a0c);
         }
 
-        .carousel-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 1100px;
-            display: flex;
-            align-items: center;
-        }
-
+        /* Estructura del Carrusel Infinito Automático */
         .carousel-container {
             width: 100%;
+            max-width: 1200px;
             overflow: hidden;
+            position: relative;
             padding: 1rem 0;
         }
 
@@ -209,59 +204,36 @@
             gap: 20px;
             width: max-content;
             animation: scroll 25s linear infinite;
-            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        .carousel-track.manual-mode {
-            animation: none !important;
+        .carousel-track:hover {
+            animation-play-state: paused; /* Se pausa al pasar el cursor */
         }
 
         .carousel-item {
-            width: 260px;
-            height: 360px;
+            width: 280px;
+            height: 380px;
             object-fit: cover;
             border-radius: 4px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
             border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease;
         }
 
+        .carousel-item:hover {
+            transform: scale(1.03);
+        }
+
+        /* Animación de desplazamiento continuo */
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-260px * 4 - 20px * 4)); }
+            100% { transform: translateX(calc(-280px * 4 - 20px * 4)); }
         }
 
-        .nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: var(--text-white);
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            z-index: 100;
-            transition: all 0.3s ease;
-        }
-
-        .nav-btn:hover {
-            background: var(--text-white);
-            color: var(--bg-black);
-            border-color: var(--text-white);
-        }
-
-        .prev-btn { left: -25px; }
-        .next-btn { right: -25px; }
-
-        /* Botón de Descarga */
+        /* Botón de Descarga Estilizado */
         .download-btn {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--text-white);
             background: transparent;
@@ -270,6 +242,8 @@
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
             transition: all 0.4s ease;
             box-shadow: 0 0 15px rgba(194, 0, 107, 0.2);
             text-decoration: none;
@@ -284,43 +258,43 @@
             transform: translateY(-3px);
         }
 
+        .download-btn:active {
+            transform: translateY(-1px);
+        }
+
         /* --- Responsividad --- */
         @media (min-width: 768px) {
-            .hero-section { padding: 4rem 10% 3rem 10%; }
-            .main-title { font-size: 7rem; }
-            .subtitle { font-size: 1.8rem; }
-            .content-grid { grid-template-columns: 1fr 1fr; align-items: start; margin-top: 4rem; gap: 4rem; }
-            .quote-left { font-size: 4rem; max-width: 480px; text-align: left; justify-self: start; }
-            .artist-right { margin-top: 6rem; text-align: right; justify-self: end; }
-            .artist-name { font-size: 4.2rem; }
-            .artist-subtext { font-size: 4.2rem; }
+            .hero-section { padding: 3rem 4rem 2rem 4rem; }
+            .main-title { font-size: 7.5rem; }
+            .subtitle { font-size: 2rem; }
+            .content-grid { grid-template-columns: 1fr 1fr; align-items: start; margin-top: 3rem; }
+            .quote-left { font-size: 4.5rem; max-width: 500px; }
+            .artist-right { margin-top: 8rem; }
+            .artist-name { font-size: 4.5rem; }
+            .artist-subtext { font-size: 4.5rem; }
             footer { flex-direction: row; align-items: flex-end; }
             .audio-player-container { margin-top: 0; position: relative; bottom: -5px; }
-            .carousel-item { width: 300px; height: 420px; }
+            .carousel-item { width: 320px; height: 440px; }
             @keyframes scroll {
                 0% { transform: translateX(0); }
-                100% { transform: translateX(calc(-300px * 4 - 20px * 4)); }
+                100% { transform: translateX(calc(-320px * 4 - 20px * 4)); }
             }
-            .prev-btn { left: -50px; }
-            .next-btn { right: -50px; }
         }
 
         @media (max-width: 480px) {
-            .hero-section { padding: 2.5rem 5% 1.5rem 5%; }
-            .main-title { font-size: 3.2rem; }
-            .subtitle { font-size: 1rem; }
-            .quote-left { font-size: 2.4rem; }
-            .artist-name { font-size: 2.4rem; }
-            .artist-subtext { font-size: 2.4rem; }
+            .main-title { font-size: 3.8rem; }
+            .subtitle { font-size: 1.1rem; }
+            .quote-left { font-size: 2.8rem; }
+            .artist-name { font-size: 2.8rem; }
+            .artist-subtext { font-size: 2.8rem; }
             .audio-player-container { max-width: 100%; }
-            .nav-btn { width: 35px; height: 35px; font-size: 1rem; }
-            .prev-btn { left: -10px; }
-            .next-btn { right: -10px; }
+            .download-btn { font-size: 1.1rem; padding: 10px 25px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Sección Superior (Portada / Revista) -->
     <main class="hero-section" id="bg-container">
         <header>
             <h1 class="main-title">Tourbook</h1>
@@ -360,33 +334,33 @@
         </footer>
     </main>
 
+    <!-- Nueva Sección Inferior (Carrusel automático y Acción) -->
     <section class="content-section">
-        <div class="carousel-wrapper">
-            <button class="nav-btn prev-btn" id="prev-arrow">&#10094;</button>
-            
-            <div class="carousel-container">
-                <div class="carousel-track" id="carousel-track-id">
-                    <img src="along.jpeg" alt="Along" class="carousel-item">
-                    <img src="harry.jpg" alt="Harry" class="carousel-item">
-                    <!-- Corrección: Cambiado 'louis 2.jpg' a 'louis2.jpg' para evitar el error de espacio -->
-                    <img src="louis2.jpg" alt="Louis 2" class="carousel-item">
-                    <img src="olivia.jpg" alt="Olivia" class="carousel-item">
-                    
-                    <img src="along.jpeg" alt="Along" class="carousel-item">
-                    <img src="harry.jpg" alt="Harry" class="carousel-item">
-                    <img src="louis2.jpg" alt="Louis 2" class="carousel-item">
-                    <img src="olivia.jpg" alt="Olivia" class="carousel-item">
-                </div>
+        
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <!-- Bloque original de imágenes -->
+                <img src="along.jpeg" alt="Along" class="carousel-item">
+                <img src="harry.jpg" alt="Harry" class="carousel-item">
+                <img src="louis 2.jpg" alt="Louis 2" class="carousel-item">
+                <img src="olivia.jpg" alt="Olivia" class="carousel-item">
+                
+                <!-- Duplicado idéntico para crear el efecto óptico de ciclo infinito -->
+                <img src="along.jpeg" alt="Along" class="carousel-item">
+                <img src="harry.jpg" alt="Harry" class="carousel-item">
+                <img src="louis 2.jpg" alt="Louis 2" class="carousel-item">
+                <img src="olivia.jpg" alt="Olivia" class="carousel-item">
             </div>
-
-            <button class="nav-btn next-btn" id="next-arrow">&#10095;</button>
         </div>
 
+        <!-- Botón de descarga interactivo (agrega el enlace final en el atributo href si lo requieres) -->
         <a href="#" class="download-btn">
             descarga el libro ya
         </a>
+
     </section>
 
+    <!-- Scripts de Interacción de Audio -->
     <script>
         const background = document.getElementById('bg-container');
         const audio = document.getElementById('audio-track');
@@ -406,39 +380,6 @@
 
         audio.addEventListener('play', () => { vinyl.style.animationPlayState = 'running'; });
         audio.addEventListener('pause', () => { vinyl.style.animationPlayState = 'paused'; });
-
-        const track = document.getElementById('carousel-track-id');
-        const prevBtn = document.getElementById('prev-arrow');
-        const nextBtn = document.getElementById('next-arrow');
-        
-        let currentIndex = 0;
-        const totalItems = 4;
-
-        function getSlideWidth() {
-            const item = document.querySelector('.carousel-item');
-            const style = window.getComputedStyle(item);
-            const margin = 20; 
-            return item.offsetWidth + margin;
-        }
-
-        function moveCarousel(direction) {
-            track.classList.add('manual-mode');
-            const slideWidth = getSlideWidth();
-
-            if (direction === 'next') {
-                currentIndex++;
-                if (currentIndex >= totalItems) currentIndex = 0;
-            } else {
-                currentIndex--;
-                if (currentIndex < 0) currentIndex = totalItems - 1;
-            }
-
-            const amountToMove = -currentIndex * slideWidth;
-            track.style.transform = `translateX(${amountToMove}px)`;
-        }
-
-        nextBtn.addEventListener('click', () => moveCarousel('next'));
-        prevBtn.addEventListener('click', () => moveCarousel('prev'));
     </script>
 
 </body>
