@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tourbook - Recap de Puro Concierto</title>
-    <!-- Importación de las tipografías elegantes y cursivas desde Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
@@ -32,7 +31,6 @@
             position: relative;
             width: 100%;
             min-height: 100vh;
-            /* Fondo con ruta relativa exacta a louis1.jpg */
             background: linear-gradient(to bottom, var(--overlay-dark), rgba(0,0,0,0.5)), url('louis1.jpg') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
@@ -40,7 +38,6 @@
             padding: 2.5rem 2rem 1.5rem 2rem;
         }
 
-        /* --- Encabezado --- */
         header {
             text-align: center;
             width: 100%;
@@ -66,7 +63,6 @@
             margin-top: 0.2rem;
         }
 
-        /* --- Contenido Central --- */
         .content-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -111,7 +107,6 @@
             letter-spacing: 1px;
         }
 
-        /* --- Reproductor de Música --- */
         .audio-player-container {
             display: flex;
             align-items: center;
@@ -125,7 +120,6 @@
             margin-top: 2rem;
         }
 
-        /* Miniatura del disco de vinilo */
         .vinyl-thumb {
             width: 50px;
             height: 50px;
@@ -147,7 +141,6 @@
             to { transform: rotate(360deg); }
         }
 
-        /* --- Footer --- */
         footer {
             display: flex;
             flex-direction: column;
@@ -185,7 +178,6 @@
         .barcode span:nth-child(4n) { width: 2px; }
         .barcode span:last-child { margin-right: 0; }
 
-        /* --- Responsividad --- */
         @media (min-width: 768px) {
             .landing-container {
                 padding: 3rem 4rem 2rem 4rem;
@@ -252,11 +244,11 @@
         </div>
 
         <footer>
-            <!-- Reproductor integrado con ruta relativa exacta y control manual -->
             <div class="audio-player-container">
                 <div class="vinyl-thumb" title="Louis Tomlinson - Faith In The Future Picture Disc"></div>
+                <!-- Sintaxis estricta con prefijo de directorio actual ./ -->
                 <audio controls>
-                    <source src="silvertongues.mp3" type="audio/mpeg">
+                    <source src="./silvertongues.mp3" type="audio/mpeg">
                     Tu navegador no soporta el elemento de audio.
                 </audio>
             </div>
